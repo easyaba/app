@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatFormFieldModule } from "@angular/material/form-field"
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,18 +13,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { RouterModule } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
 import { TimerTriggerComponent } from './timer-trigger/timer-trigger.component';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat'
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { StudentDialogComponent } from './student-dialog/student-dialog.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentListItemComponent } from './student-list/student-list-item/student-list-item.component';
+import { BehaviorListComponent } from './behavior-list/behavior-list.component';
+import { BehaviorListItemComponent } from './behavior-list/behavior-list-item/behavior-list-item.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +35,16 @@ import { StudentListItemComponent } from './student-list/student-list-item/stude
     TimerTriggerComponent,
     StudentDialogComponent,
     StudentListComponent,
-    StudentListItemComponent
+    StudentListItemComponent,
+    BehaviorListComponent,
+    BehaviorListItemComponent,
   ],
   imports: [
+    //core
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
+    //material
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -52,7 +57,7 @@ import { StudentListItemComponent } from './student-list/student-list-item/stude
     MatInputModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
