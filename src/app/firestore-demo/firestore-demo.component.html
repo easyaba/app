@@ -1,0 +1,8 @@
+<p>Data from firestore</p>
+<div>
+  <ul>
+    <li *ngFor="let item of list$ | async as items">
+      <pre>{{ item | json }}</pre>
+    </li>
+  </ul>
+</div>
