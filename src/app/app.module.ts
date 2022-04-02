@@ -14,12 +14,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
+import { TimerTriggerComponent } from './timer-trigger/timer-trigger.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildListComponent,
-    ChildDetailComponent
+    ChildDetailComponent,
+    TimerTriggerComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -32,9 +34,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatDividerModule,
     MatListModule,
-    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
