@@ -1,18 +1,54 @@
-<nav class="m2 border-4 border-dashed">
-  <ul>
-    <li>
-      <a [routerLink]="['/abc']" routerLinkActive="router-link-active">ABC</a>
-    </li>
-    <li>
-      <a
-        [routerLink]="['/']"
-        routerLinkActive="router-link-active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
-    </li>
-  </ul>
-</nav>
-<div class="m2 border-4 border-dashed">
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary">
+  <div class="flex flex-grow">
+    <div class="flex-auto">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Easy ABA</span>
+    </div>
+    <div class="flex-grow"></div>
+    <div class="flex-none ">
+      <button mat-button>
+        <div class="flex flex-row">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container color="primary">
+  <mat-sidenav #snav [opened]="!isHandset" [mode]="isHandset ? 'over' : 'side'">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon matListIcon>calendar_today</mat-icon>
+          <span>Plan</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="['child-list']" routerLinkActive="button-link-active">
+          <mat-icon matListIcon>group</mat-icon>
+          <span>Študenti</span>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon matListIcon>perm_contact_calendar</mat-icon>
+          <span>My day</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon matListIcon>settings</mat-icon>
+          <span>Settings</span>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content color="primary">
+    <div class="flex flex-grow h-full ml-2">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
