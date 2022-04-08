@@ -7,7 +7,7 @@
       <span>Easy ABA</span>
     </div>
     <div class="flex-grow"></div>
-    <div class="flex-none ">
+    <div class="flex-none">
       <button mat-button>
         <div class="flex flex-row">
           <mat-icon>account_circle</mat-icon>
@@ -26,7 +26,11 @@
         </button>
       </mat-list-item>
       <mat-list-item>
-        <button mat-button [routerLink]="['child-list']" routerLinkActive="button-link-active">
+        <button
+          mat-button
+          [routerLink]="['child-list']"
+          routerLinkActive="button-link-active"
+        >
           <mat-icon matListIcon>group</mat-icon>
           <span>Študenti</span>
         </button>

@@ -7,25 +7,24 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 @UntilDestroy()
 export class AppComponent {
   title = 'easyaba';
-  user: any | undefined
-  isHandset = false
-
-
-
+  user: any | undefined;
+  isHandset = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver.observe(Breakpoints.Handset)
+    this.breakpointObserver
+      .observe(Breakpoints.Handset)
       .pipe(
         untilDestroyed(this),
-        map(result => result.matches),
+        map((result) => result.matches),
         shareReplay()
-      ).subscribe((matches) => { this.isHandset = matches })
-
+      )
+      .subscribe((matches) => {
+        this.isHandset = matches;
+      });
   }
-
 }

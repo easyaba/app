@@ -1,0 +1,50 @@
+<div
+  matRipple
+  (click)="toggleTimer()"
+  class="p-3 border-1 border-blue-600 rounded-lg bg-blue-400 text-blue-100 shadow-lg cursor-pointer"
+>
+  <div class="flex flex-col justify-between">
+    <div class="flex justify-between">
+      <div class="relative">
+        <mat-icon
+          class="block"
+          [ngClass]="{ 'animate-bounce': timerRunning }"
+          aria-hidden="false"
+          aria-label="Timer icon"
+          >timer</mat-icon
+        >
+      </div>
+      <div *ngIf="timer$ | async as timer" class="font-mono" tid="timer">
+        <span class="text-xl inline-block">{{ timer | date: "mm:ss" }}</span>
+        <span class="text-xs inline-block w-3">.{{ timer | date: "S" }}</span>
+      </div>
+    </div>
+    <div class="font-bold text-xl relative">
+      <span tid="abbreviation">{{ abbreviation }}</span>
+    </div>
+    <div class="font-thin text-xs" tid="name">{{ name }}</div>
+    <div class="flex items-center justify-between">
+      <div>
+        <span *ngIf="total">Spolu {{ total | date: "mm:ss" }}</span>
+      </div>
+      <div class="play-stop-button w-10 h-10 flex items-center">
+        <mat-icon
+          class="scale-[2] fixed"
+          [@enterAnimation]
+          *ngIf="!timerRunning"
+          aria-hidden="false"
+          aria-label="Timer icon"
+          >play_arrow</mat-icon
+        >
+        <mat-icon
+          class="scale-[2] fixed"
+          [@enterAnimation]
+          *ngIf="timerRunning"
+          aria-hidden="false"
+          aria-label="Timer icon"
+          >stop</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+</div>
