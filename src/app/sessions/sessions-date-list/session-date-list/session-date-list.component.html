@@ -1,0 +1,18 @@
+<h1>Zoznam sedení:<span class="float-right"><mat-icon>face</mat-icon>Gordon Henkel</span></h1>
+<div class="w-full">
+    <mat-list>
+        <div class="">
+
+            <ng-container *ngFor="let sessionDate of dates">
+                <h3>
+                    <mat-icon>date_range</mat-icon>{{sessionDate}}
+                </h3>
+                <app-session-list-component mat-list-item [sessions]="sessionsMap?.get(sessionDate)">
+                </app-session-list-component>
+            </ng-container>
+        </div>
+    </mat-list>
+</div>
+<div class="fixed bottom-5 right-5 md:bottom-10 md:right-10">
+    <button mat-fab>+</button>
+</div>

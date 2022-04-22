@@ -1,0 +1,15 @@
+<div class="pr-2 pb-2">
+  <div *ngIf="counter" class="bg-orange-400 shadow-gray-500 shadow-md rounded-xl p-2">
+    {{counter.behaviourName}} : {{counter?.count}}
+  </div>
+  <div *ngIf="timer" class="bg-lime-400 shadow-gray-500 shadow-md rounded-xl p-2">
+    {{timer.behaviourName}} : {{timer?.duration}}s
+  </div>
+  <div *ngIf="fullInterval" class="bg-amber-400 shadow-gray-500 shadow-md rounded-xl p-2">
+    {{fullInterval?.behaviourName}}: {{fullInterval?.percentageOk | number : '1.0-2'}}%
+  </div>
+  <div *ngIf="partInterval" class="bg-teal-400 shadow-gray-500 shadow-md rounded-xl p-2">
+    {{partInterval?.behaviourName}}: {{partInterval?.percentageOk| number : '1.0-2'}}%
+  </div>
+</div>
+
