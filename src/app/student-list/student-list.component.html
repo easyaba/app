@@ -1,0 +1,12 @@
+<div class="w-96 border-2">
+  <p>student-list works!</p>
+  <div>
+    <mat-action-list *ngFor="let student of list$ | async as items">
+      <button mat-button (click)="openStudent(student)">
+        <pre>{{ student.name }}, {{ student.surname }}, {{ student.age }}</pre>
+      </button>
+   </mat-action-list>
+  </div>
+
+<button mat-fab (click)="openDialog()" class="fixed bottom-4 right-4 z-50">Add</button>
+</div>
