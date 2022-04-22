@@ -21,6 +21,9 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { StudentDialogComponent } from './student-dialog/student-dialog.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,10 @@ import { StudentListComponent } from './student-list/student-list.component';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatInputModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
