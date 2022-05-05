@@ -12,6 +12,7 @@ import { Validators } from '@angular/forms';
 export class StudentDialogComponent implements OnInit {
 
   form: FormGroup<Student>;
+  title: string = "Vytvor študenta";
 
   constructor(
     private fb: FormBuilder,
@@ -25,6 +26,10 @@ export class StudentDialogComponent implements OnInit {
       age: new FormControl(undefined, [Validators.min(3), Validators.max(99)]),
       surname: new FormControl(undefined)
     })
+
+    if (student.name !== '') {
+      this.title = "Aktualizuj študenta";
+    }
 
     this.form.setValue(student);
 
