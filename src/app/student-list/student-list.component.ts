@@ -23,13 +23,13 @@ export class StudentListComponent implements OnInit {
 
   openDialog() {
     const studDialog = this.dialog.open(StudentDialogComponent, {
-      // data: {name: 'fero', age: 12, surname: 'blb'}
       data: {name: '', surname: '', age: 3, id: ''}
     })
 
     studDialog.afterClosed().subscribe(result => {
-      console.log(`Vysledok je ${JSON.stringify(result)}`)
-      this.students?.add(result)
+      if (result !== undefined) {
+        this.students?.add(result)
+      }
     })
   }
 
@@ -39,18 +39,14 @@ export class StudentListComponent implements OnInit {
     })
 
     studDialog.afterClosed().subscribe(result => {
-      console.log(`Vysledok je ${JSON.stringify(result)}`)
-      this.students?.doc(student.id).update(result);
+      if (result !== undefined) {
+        this.students?.doc(student.id).update(result)
+      }
     })
   }
 
   ngOnInit(): void {
     this.students = this.store.collection<Student>('students');
-    this.students.get().subscribe((data) =>
-    console.log(
-      `Data from Firebase using COMPAT API: \n${JSON.stringify(data.docs)}`
-    )
-  );
   }
 
 }

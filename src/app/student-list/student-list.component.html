@@ -1,12 +1,16 @@
-<div class="w-96 border-2">
-  <p>student-list works!</p>
-  <div>
-    <mat-action-list *ngFor="let student of list$ | async as items">
-      <button mat-button (click)="openStudent(student)">
-        <pre>{{ student.name }}, {{ student.surname }}, {{ student.age }}</pre>
-      </button>
-   </mat-action-list>
+<div class="border-2 w-full">
+  <div class="divide-y-2 divide-solid grid grid-cols-1 lg:grid-cols-3">
+    <ng-container *ngFor="let student of list$ | async; index as i">
+      <student-list-item
+        [student]="student"
+        (click)="openStudent(student)"
+        class="cursor-pointer block"
+      >
+      </student-list-item>
+    </ng-container>
   </div>
 
-<button mat-fab (click)="openDialog()" class="fixed bottom-4 right-4 z-50">Add</button>
+  <div class="fixed bottom-5 right-5 md:bottom-10 md:right-10">
+    <button mat-fab (click)="openDialog()">Add</button>
+  </div>
 </div>

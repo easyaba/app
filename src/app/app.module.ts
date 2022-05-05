@@ -24,6 +24,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StudentListItemComponent } from './student-list/student-list-item/student-list-item.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChildDetailComponent,
     TimerTriggerComponent,
     StudentDialogComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentListItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
