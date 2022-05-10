@@ -1,0 +1,16 @@
+<div class="border-2 w-full">
+  <div class="divide-y-2 divide-solid grid grid-cols-1 lg:grid-cols-3">
+    <ng-container *ngFor="let student of list$ | async; index as i">
+      <student-list-item
+        [student]="student"
+        (click)="openStudent(student)"
+        class="cursor-pointer block"
+      >
+      </student-list-item>
+    </ng-container>
+  </div>
+
+  <div class="fixed bottom-5 right-5 md:bottom-10 md:right-10">
+    <button mat-fab (click)="openDialog()">Add</button>
+  </div>
+</div>
