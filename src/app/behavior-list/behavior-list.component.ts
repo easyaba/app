@@ -3,10 +3,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { catchError, delay, Observable } from 'rxjs';
 import { Behavior } from '../model/behavior.model';
 
-interface Test {
-  name: string;
-  surname: string;
-}
 
 @Component({
   templateUrl: './behavior-list.component.html',
@@ -15,9 +11,12 @@ interface Test {
 export class BehaviorListComponent implements OnInit {
   list$: Observable<Behavior[]>;
   constructor(private readonly afs: AngularFirestore) {
+    this.afs
+    // .collection<Test>('behavior').get().subscribe(a => console.log(`JSON ${JSON.stringify(a.docs[0].data(), null, 2)}`))
+
     this.list$ = this.afs
-      .collection<Test>('behavior')
-      .valueChanges()
+      .collection<Behavior>('behavior')
+      .valueChanges({ idField: "id" })
       .pipe(
         delay(1000),
         catchError((e) => {
@@ -27,5 +26,15 @@ export class BehaviorListComponent implements OnInit {
       );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+  openDetail(item: Behavior) {
+    alert(`You clicked ${item.name}`)
+  }
+
+  async update(item: Behavior) {
+    const res = await this.afs.collection('behavior').doc(item.id).update({ test: new Date().toISOString() })
+  }
 }

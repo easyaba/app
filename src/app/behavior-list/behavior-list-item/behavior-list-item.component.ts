@@ -3,7 +3,7 @@ import { Behavior } from 'src/app/model/behavior.model';
 
 @Component({
   selector: 'app-behavior-list-item',
-  template: ` <div class="p-2">{{ behavior.name }}</div> `,
+  templateUrl: './behavior-list-item.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -11,5 +11,5 @@ export class BehaviorListItemComponent {
   @Input()
   behavior!: Behavior;
 
-  constructor() {}
+  constructor() { }
 }
