@@ -1,0 +1,57 @@
+<div
+  matRiple
+  (click)="startInterval()"
+  class="relative h-36 p-3 border-1 border-blue-600 rounded-lg bg-blue-400 text-blue-100 shadow-lg cursor-pointer"
+>
+  <div
+    class="bg-red-800 absolute h-full top-0 left-0 rounded-lg"
+    [style.width.%]="progress"
+  ></div>
+  <div class="h-full w-full absolute flex justify-between">
+    <div class="h-full flex flex-col">
+      <div class="relative">
+        <mat-icon
+          class="block"
+          aria-hidden="false"
+          aria-label="Full interval icon"
+          >brightness_1</mat-icon
+        >
+      </div>
+      <div class="font-bold text-xl relative">
+        <span tid="abbreviation">{{ abbreviation }}</span>
+      </div>
+      <div class="font-thin text-xs relative" tid="name">{{ name }}</div>
+      <div class="flex items-center justify-between">
+        <span>{{ total | number }}%</span>
+      </div>
+    </div>
+    <div class="h-full flex flex-col">
+      <div class="flex flex-wrap relative">
+        <div *ngFor="let item of behaviour" class="border-cyan-100 border mr-2">
+          <span *ngIf="item === false"><mat-icon>done</mat-icon></span>
+          <span *ngIf="item === true"><mat-icon>close</mat-icon></span>
+          <span *ngIf="item === undefined"><mat-icon>remove</mat-icon></span>
+        </div>
+      </div>
+      <div class="flex items-center w-full h-10">
+        <div class="flex w-full"></div>
+        <div class="flex mr-10">
+          <mat-icon
+            class="scale-[2]"
+            *ngIf="!running"
+            aria-hidden="false"
+            aria-label="Inteval icon"
+            >play_arrow</mat-icon
+          >
+          <mat-icon
+            class="scale-[2]"
+            *ngIf="running"
+            aria-hidden="false"
+            aria-label="Inteval icon"
+            >close</mat-icon
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,6 +25,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentListItemComponent } from './student-list/student-list-item/student-list-item.component';
+import { CountTriggerComponent } from './count-trigger/count-trigger.component';
+import { TestComponent } from './test/test.component';
+import { FullIntervalTriggerComponent } from './full-interval-trigger/full-interval-trigger.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { StudentListItemComponent } from './student-list/student-list-item/stude
     TimerTriggerComponent,
     StudentDialogComponent,
     StudentListComponent,
-    StudentListItemComponent
+    StudentListItemComponent,
+    CountTriggerComponent,
+    TestComponent,
+    FullIntervalTriggerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

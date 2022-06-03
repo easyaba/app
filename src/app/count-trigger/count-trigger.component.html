@@ -1,0 +1,33 @@
+<div
+  matRipple
+  (click)="count()"
+  class="p-3 border-1 border-blue-600 rounded-lg bg-blue-400 text-blue-100 shadow-lg cursor-pointer"
+>
+<div class="relative">
+  <mat-icon
+    class="block"
+    aria-hidden="false"
+    aria-label="Plus one icon"
+    >plus_one</mat-icon
+  >
+</div>
+  <div class="flex flex-col justify-between">
+    <div class="font-bold text-xl relative">
+      <span tid="abbreviation">{{ abbreviation }}</span>
+    </div>
+    <div class="font-thin text-xs" tid="name">{{ name }}</div>
+    <div class="flex items-center justify-between">
+      <div>
+        <span *ngIf="total">Spolu {{ total | number }}</span>
+      </div>
+      <div class="play-stop-button w-10 h-10 flex items-center">
+        <mat-icon
+          class="scale-[2] fixed"
+          aria-hidden="false"
+          aria-label="Timer icon"
+          >add</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+</div>
