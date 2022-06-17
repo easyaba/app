@@ -33,18 +33,6 @@ export class StudentListComponent implements OnInit {
     })
   }
 
-  openStudent(student: Student) {
-    const studDialog = this.dialog.open(StudentDialogComponent, {
-      data: student
-    })
-
-    studDialog.afterClosed().subscribe(result => {
-      if (result !== undefined) {
-        this.students?.doc(student.id).update(result)
-      }
-    })
-  }
-
   ngOnInit(): void {
     this.students = this.store.collection<Student>('students');
   }
