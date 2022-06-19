@@ -1,13 +1,13 @@
 {
-  "targets": {
-    "easy-aba": {
-      "hosting": {
-        "easyaba": [
-          "easy-aba"
-        ]
-      }
-    }
-  },
+  // "targets": {
+  //   "easy-aba": {
+  //     "hosting": {
+  //       "easyaba": [
+  //         "easy-aba"
+  //       ]
+  //     }
+  //   }
+  // },
   "projects": {
     "default": "easy-aba"
   }
