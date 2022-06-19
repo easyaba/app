@@ -8,10 +8,8 @@
     </div>
     <div class="flex-grow"></div>
     <div class="flex-none">
-      <button mat-button>
-        <div class="flex flex-row">
-          <mat-icon>account_circle</mat-icon>
-        </div>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
       </button>
     </div>
   </div>
@@ -20,33 +18,31 @@
   <mat-sidenav #snav [opened]="!isHandset" [mode]="isHandset ? 'over' : 'side'">
     <mat-nav-list>
       <mat-list-item>
-        <button mat-button>
-          <mat-icon matListIcon>calendar_today</mat-icon>
-          <span>Plan</span>
-        </button>
+        <mat-icon matListIcon>calendar_today</mat-icon>
+        <span>Plan</span>
       </mat-list-item>
-      <mat-list-item>
-        <button
-          mat-button
-          [routerLink]="['students']"
-          routerLinkActive="button-link-active"
-        >
-          <mat-icon matListIcon>group</mat-icon>
-          <span>Študenti</span>
-        </button>
+      <mat-list-item
+        [routerLink]="['students']"
+        routerLinkActive="button-link-active"
+      >
+        <mat-icon matListIcon>group</mat-icon>
+        <span>Študenti</span>
+      </mat-list-item>
+      <mat-list-item
+        routerLink="/behaviors"
+        routerLinkActive="button-link-active"
+      >
+        <mat-icon matListIcon>group</mat-icon>
+        <span>Správania</span>
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>
-        <button mat-button>
-          <mat-icon matListIcon>perm_contact_calendar</mat-icon>
-          <span>My day</span>
-        </button>
+        <mat-icon matListIcon>perm_contact_calendar</mat-icon>
+        <span>My day</span>
       </mat-list-item>
       <mat-list-item>
-        <button mat-button>
-          <mat-icon matListIcon>settings</mat-icon>
-          <span>Settings</span>
-        </button>
+        <mat-icon matListIcon>settings</mat-icon>
+        <span>Settings</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>

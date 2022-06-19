@@ -1,0 +1,22 @@
+<div class="w-full">
+  <div class="divide-y divide-solid">
+    <ng-container *ngIf="list$ | async as items; else loading">
+      <app-behavior-list-item
+        *ngFor="let item of items"
+        class="block"
+        [behavior]="item"
+        (click)="openDetail(item)"
+      >
+      </app-behavior-list-item>
+    </ng-container>
+  </div>
+
+  <div class="fixed bottom-5 right-5 md:bottom-10 md:right-10">
+    <button mat-fab color="primary" aria-label="Pridat nove spravanie">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <ng-template #loading>
+    <div>...loading</div>
+  </ng-template>
+</div>
