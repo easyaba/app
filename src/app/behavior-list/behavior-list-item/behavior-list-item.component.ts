@@ -11,5 +11,5 @@ export class BehaviorListItemComponent {
   @Input()
   behavior!: Behavior;
 
-  constructor() { }
+  constructor() {}
 }

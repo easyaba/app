@@ -1,5 +1,5 @@
 <div class="p-2 flex">
-  <div [ngSwitch]="behavior.type" class="mx-4 flex items-center">
+  <div [ngSwitch]="behavior.type" class="mx-4 flex items-center text-gray-600">
     <div *ngSwitchCase="'frequency'">
       <mat-icon class="block" aria-hidden="false" aria-label="Timer icon"
         >blur_linear</mat-icon
@@ -18,11 +18,12 @@
     <div *ngSwitchDefault>DEF</div>
   </div>
   <div class="flex-grow truncate">
-    <span class="text-lg capitalize">
+    <span class="text-lg capitalize text-gray-700 font-medium">
       {{ behavior.name }}
     </span>
-    <div class="pt-2 flex">
-      <span class="bg-blue-500 rounded-xl px-2">{{
+    <div class="pt-2 flex items-center">
+      <span class="text-gray-600 mr-3">{{ behavior.type }}</span>
+      <span class="bg-green-300 text-green-600 rounded-md px-2">{{
         behavior.abbreviation || "asd"
       }}</span>
     </div>
