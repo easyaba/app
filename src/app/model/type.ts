@@ -1,0 +1,6 @@
+export enum Type {
+  COUNTER,
+  TIMER,
+  FULLLINTERVAL,
+  PARTINTERVAL,
+}

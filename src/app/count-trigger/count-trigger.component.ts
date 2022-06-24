@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { BehaviourEvent } from '../model/behaviour-event';
+import { Type } from '../model/type';
 
 @Component({
   selector: 'app-count-trigger',
@@ -21,7 +23,7 @@ export class CountTriggerComponent implements OnInit {
   color: string | undefined;
 
   @Output()
-  counter = new EventEmitter<void>();
+  counter = new EventEmitter<BehaviourEvent>();
 
   constructor() { }
 
@@ -29,7 +31,8 @@ export class CountTriggerComponent implements OnInit {
   }
 
   count() {
-    this.counter.emit();
+    let newCountEvent: BehaviourEvent = {behaviourId: this.name, behaviourName: this.name, type: Type.COUNTER, start: new Date()};
+    this.counter.emit(newCountEvent);
   }
 
 }
