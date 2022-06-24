@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Behavior } from 'src/app/model/behavior.model';
+import { Behavior } from 'src/app/model/student.model';
 
 @Component({
   selector: 'app-behavior-list-item',

@@ -3,7 +3,7 @@ import { Firestore, collection, collectionData, DocumentData } from '@angular/fi
 import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore'
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { Student } from '../model/student';
+import { Student } from '../model/student.model';
 import { StudentDialogComponent } from '../student-dialog/student-dialog.component';
 
 @Component({

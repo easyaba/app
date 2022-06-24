@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { BehaviorType, BehaviourEvent, Student, StudentSession } from './model/student.model';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,11 @@ export class AppComponent {
   title = 'easyaba';
   user: any | undefined;
   isHandset = false;
+  list$: Observable<Student[]>;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver,
+    private readonly store: AngularFirestore) {
+    this.list$ = store.collection<Student>('students').valueChanges({ idField: 'id' });
     this.breakpointObserver
       .observe(Breakpoints.Handset)
       .pipe(
@@ -27,4 +32,5 @@ export class AppComponent {
         this.isHandset = matches;
       });
   }
+
 }

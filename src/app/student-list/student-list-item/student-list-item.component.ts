@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Student } from 'src/app/model/student';
+import { Student } from 'src/app/model/student.model';
 
 @Component({
   selector: 'student-list-item',
