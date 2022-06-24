@@ -14,12 +14,15 @@
     </div>
   </div>
 </mat-toolbar>
-<mat-sidenav-container color="primary">
+<mat-sidenav-container color="primary" >
   <mat-sidenav #snav [opened]="!isHandset" [mode]="isHandset ? 'over' : 'side'">
     <mat-nav-list>
       <mat-list-item>
-        <mat-icon matListIcon>calendar_today</mat-icon>
-        <span>Plan</span>
+        <button mat-button
+        [routerLink]="['sessions']">
+          <mat-icon matListIcon>calendar_today</mat-icon>
+          <span>Sedenia</span>
+        </button>
       </mat-list-item>
       <mat-list-item
         [routerLink]="['students']"

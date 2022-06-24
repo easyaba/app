@@ -1,0 +1,15 @@
+    <div matline class="flex flex-row">
+        <div class="grow">
+            <mat-icon>hourglass_empty</mat-icon>
+            <span *ngIf="session?.start">{{session?.start?.toDate()| date : 'hh:mm'}} - </span>
+            <span *ngIf="session?.end">{{session?.end?.toDate()| date : 'hh:mm'}}</span>
+            <span *ngIf="!session?.end">n/a </span>
+          </div>
+          <div class="flex-none w-24">
+            <span *ngIf="session?.start && session?.end">{{getSessionLength()}}</span>
+          </div>
+    </div>
+    <div class="flex flex-row">
+      <app-behaviour-list [events]="session!.behaviours"></app-behaviour-list>
+    </div>
+

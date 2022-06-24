@@ -26,6 +26,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StudentListItemComponent } from './student-list/student-list-item/student-list-item.component';
 import { BehaviorListComponent } from './behavior-list/behavior-list.component';
 import { BehaviorListItemComponent } from './behavior-list/behavior-list-item/behavior-list-item.component';
+import { SessionListComponent } from './sessions/sessions-list/session-list.component';
+import { SessionService } from './sessions/shared/session.service';
+import { SessionListItemComponent } from './sessions/session-list-item/session-list-item.component';
+import { SessionDateListComponent } from './sessions/sessions-date-list/session-date-list/session-date-list.component';
+import { BehaviourListItemComponent } from './sessions/behaviour-list-item/behaviour-list-item.component';
+import { BehaviourListComponent } from './sessions/behaviour-list/behaviour-list.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +45,11 @@ import { BehaviorListItemComponent } from './behavior-list/behavior-list-item/be
     StudentListItemComponent,
     BehaviorListComponent,
     BehaviorListItemComponent,
+    SessionListComponent,
+    SessionListItemComponent,
+    SessionDateListComponent,
+    BehaviourListItemComponent,
+    BehaviourListComponent
   ],
   imports: [
     //core
@@ -59,7 +71,7 @@ import { BehaviorListItemComponent } from './behavior-list/behavior-list-item/be
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [SessionService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

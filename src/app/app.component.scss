@@ -1,9 +1,4 @@
-mat-toolbar {
-}
 
-mat-sidenav {
- 
-}
 
 mat-sidenav-container {
   height: calc(100vh - 70px)  
@@ -11,13 +6,6 @@ mat-sidenav-container {
 
 .content {
   margin-left: 5px;
-}
-
-.avatar {
-  width:25px;
-  height:25px;
-  border-radius: 50%;
-  float: left;
 }
 
 .button-link-active {
