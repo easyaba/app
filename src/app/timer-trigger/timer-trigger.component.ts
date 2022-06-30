@@ -82,7 +82,7 @@ export class TimerTriggerComponent implements OnInit {
         .pipe(take(1))
         .subscribe((value) => {
           let endDate = new Date();
-          let behaviourEvent: BehaviourEvent = {behaviourId: this.name, behaviourName: this.name,
+          let behaviourEvent: BehaviourEvent = {behaviourId: this.name == undefined? "": this.name, behaviourName: this.name == undefined? "": this.name,
             type: Type.TIMER, start: new Date(this.start), end: endDate, duration: (endDate.getTime() - this.start)}
           this.timer.emit(behaviourEvent)
         }

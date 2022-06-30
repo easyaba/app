@@ -27,7 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StudentListItemComponent } from './student-list/student-list-item/student-list-item.component';
 import { CountTriggerComponent } from './count-trigger/count-trigger.component';
 import { TestComponent } from './test/test.component';
-import { FullIntervalTriggerComponent } from './full-interval-trigger/full-interval-trigger.component';
+import { IntervalTriggerComponent } from './interval-trigger/interval-trigger.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { FullIntervalTriggerComponent } from './full-interval-trigger/full-inter
     StudentListItemComponent,
     CountTriggerComponent,
     TestComponent,
-    FullIntervalTriggerComponent
+    IntervalTriggerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -31,7 +31,7 @@ export class CountTriggerComponent implements OnInit {
   }
 
   count() {
-    let newCountEvent: BehaviourEvent = {behaviourId: this.name, behaviourName: this.name, type: Type.COUNTER, start: new Date()};
+    let newCountEvent: BehaviourEvent = {behaviourId: this.name == undefined? "": this.name, behaviourName: this.name == undefined? "": this.name, type: Type.COUNTER, start: new Date()};
     this.counter.emit(newCountEvent);
   }
 

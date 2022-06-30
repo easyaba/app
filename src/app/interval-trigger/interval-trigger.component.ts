@@ -4,17 +4,21 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { interval, Observable, startWith, take } from 'rxjs';
 
 @Component({
-  selector: 'app-full-interval-trigger',
-  templateUrl: './full-interval-trigger.component.html',
-  styleUrls: ['./full-interval-trigger.component.scss'],
+  selector: 'app-interval-trigger',
+  templateUrl: './interval-trigger.component.html',
+  styleUrls: ['./interval-trigger.component.scss'],
 })
 @UntilDestroy()
-export class FullIntervalTriggerComponent implements OnInit {
+export class IntervalTriggerComponent implements OnInit {
   constructor() {}
 
   running = false;
 
   progress = 0;
+
+  // Definition if the interval is full interval or partial interval
+  @Input()
+  fullIntervalType: boolean = true;
 
   @Input()
   intervalLength = 60;
@@ -45,9 +49,9 @@ export class FullIntervalTriggerComponent implements OnInit {
       if (this.currentInterval == this.intervalCount) {
         // do nothing if we reached the last interval
       } else {
-        this.behaviour[this.currentInterval] = true;
+        this.behaviour[this.currentInterval] = !this.fullIntervalType;
 
-        this.total = this.behaviour.slice(0,this.currentInterval + 1).filter(x => x == false).length / (this.currentInterval + 1) * 100
+        this.total = this.behaviour.slice(0,this.currentInterval + 1).filter(x => x == true).length / (this.currentInterval + 1) * 100
       }
     } else {
       console.log("intervalcount " + this.intervalCount + " behavior " + this.behaviour)
@@ -61,10 +65,10 @@ export class FullIntervalTriggerComponent implements OnInit {
           this.progress = (intervalSeconds / this.intervalLength) * 100;
           if (this.progress >= 100) {
             if (this.behaviour[this.currentInterval] === undefined) {
-              this.behaviour[this.currentInterval] = false;
+              this.behaviour[this.currentInterval] = this.fullIntervalType;
 
               // recalculate total
-              this.total = this.behaviour.slice(0,this.currentInterval + 1).filter(x => x == false).length / (this.currentInterval + 1) * 100
+              this.total = this.behaviour.slice(0,this.currentInterval + 1).filter(x => x == true).length / (this.currentInterval + 1) * 100
             }
             this.currentInterval++;
           }

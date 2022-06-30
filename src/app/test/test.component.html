@@ -1,4 +1,5 @@
 <p>test works!</p>
 
 <app-count-trigger color="red" name="Krik" abbreviation="KK" [total]="totalCount" (counter)="inc()"></app-count-trigger>
-<app-full-interval-trigger name="TestFull" abbreviation="TF" [intervalCount]="15" [intervalLength]="5"></app-full-interval-trigger>
+<app-interval-trigger name="TestFull" abbreviation="TF" [intervalCount]="15" [intervalLength]="5"></app-interval-trigger>
+<app-interval-trigger name="TestPart" abbreviation="TP" [fullIntervalType]=false [intervalCount]="15" [intervalLength]="5"></app-interval-trigger>
