@@ -29,6 +29,7 @@ import { BehaviorListComponent } from './behavior-list/behavior-list.component';
 import { BehaviorListItemComponent } from './behavior-list/behavior-list-item/behavior-list-item.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
