@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { Student } from '../model/student';
+import { Student } from '../model/student.model';
 import { StudentDialogComponent } from '../student-dialog/student-dialog.component';
 import { StudentService } from '../services/student.service';
 

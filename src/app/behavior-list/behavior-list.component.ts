@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { catchError, delay, Observable } from 'rxjs';
-import { Behavior } from '../model/behavior.model';
+import { Behavior } from '../model/student.model';
 
 
 @Component({

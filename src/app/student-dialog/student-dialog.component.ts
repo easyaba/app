@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@ngneat/reactive-forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Student } from '../model/student';
+import { Student } from '../model/student.model';
 import { Validators } from '@angular/forms';
 
 @Component({
