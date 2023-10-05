@@ -4,7 +4,7 @@ import {
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-import { Student } from '../model/student';
+import { Student } from '../model/student.model';
 
 @Injectable({ providedIn: 'root' })
 export class StudentService {

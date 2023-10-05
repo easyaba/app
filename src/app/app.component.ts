@@ -4,6 +4,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { BehaviorType, BehaviourEvent, Student, StudentSession } from './model/student.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
