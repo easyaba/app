@@ -5,13 +5,15 @@ import { ChildDetailComponent } from './child-detail/child-detail.component';
 import { ChildListComponent } from './child-list/child-list.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'students', pathMatch: 'full' },
   { path: 'students/:id', component: StudentDetailComponent },
   { path: 'child-list', component: ChildListComponent },
   { path: 'child/:id', component: ChildDetailComponent },
-  { path: 'students', component: StudentListComponent },
+  { path: 'students', component: StudentListComponent},
+  { path: 'test', component: TestComponent },
   { path: 'behaviors', component: BehaviorListComponent },
 ];
 

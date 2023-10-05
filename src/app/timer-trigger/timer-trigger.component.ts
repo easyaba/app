@@ -8,6 +8,8 @@ import {
   Output,
 } from '@angular/core';
 import { BehaviorSubject, Observable, timer, map, take, startWith } from 'rxjs';
+import { BehaviourEvent } from '../model/behaviour-event';
+import { Type } from '../model/type';
 
 const TICK_INTERVAL = 100;
 
@@ -46,7 +48,7 @@ export class TimerTriggerComponent implements OnInit {
   color: string | undefined;
 
   @Output()
-  timer = new EventEmitter<number>();
+  timer = new EventEmitter<BehaviourEvent>();
 
   start: number = 0;
 
@@ -78,8 +80,12 @@ export class TimerTriggerComponent implements OnInit {
     this.timer$ &&
       this.timer$
         .pipe(take(1))
-        .subscribe((value) =>
-          this.timer.emit(new Date().getTime() - this.start)
+        .subscribe((value) => {
+          let endDate = new Date();
+          let behaviourEvent: BehaviourEvent = {behaviourId: this.name == undefined? "": this.name, behaviourName: this.name == undefined? "": this.name,
+            type: Type.TIMER, start: new Date(this.start), end: endDate, duration: (endDate.getTime() - this.start)}
+          this.timer.emit(behaviourEvent)
+        }
         );
     this.timer$ = undefined;
   }

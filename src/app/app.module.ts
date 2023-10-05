@@ -25,6 +25,9 @@ import { environment } from '../environments/environment';
 import { StudentDialogComponent } from './student-dialog/student-dialog.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentListItemComponent } from './student-list/student-list-item/student-list-item.component';
+import { CountTriggerComponent } from './count-trigger/count-trigger.component';
+import { TestComponent } from './test/test.component';
+import { IntervalTriggerComponent } from './interval-trigger/interval-trigger.component';
 import { BehaviorListComponent } from './behavior-list/behavior-list.component';
 import { BehaviorListItemComponent } from './behavior-list/behavior-list-item/behavior-list-item.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
@@ -40,6 +43,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     StudentDialogComponent,
     StudentListComponent,
     StudentListItemComponent,
+    CountTriggerComponent,
+    TestComponent,
+    IntervalTriggerComponent,
     BehaviorListComponent,
     BehaviorListItemComponent,
     StudentDetailComponent,
