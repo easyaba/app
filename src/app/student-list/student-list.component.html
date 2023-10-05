@@ -3,7 +3,7 @@
     <ng-container *ngFor="let student of list$ | async; index as i">
       <student-list-item
         [student]="student"
-        (click)="openStudent(student)"
+        routerLink="/students/{{student.id}}"
         class="cursor-pointer block"
       >
       </student-list-item>

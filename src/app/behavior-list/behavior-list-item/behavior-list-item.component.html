@@ -1,0 +1,39 @@
+<div class="p-2 flex">
+  <div [ngSwitch]="behavior.type" class="mx-4 flex items-center text-gray-600">
+    <div *ngSwitchCase="'frequency'">
+      <mat-icon class="block" aria-hidden="false" aria-label="Timer icon"
+        >blur_linear</mat-icon
+      >
+    </div>
+    <div *ngSwitchCase="'counter'">
+      <mat-icon class="block" aria-hidden="false" aria-label="Timer icon"
+        >playlist_add</mat-icon
+      >
+    </div>
+    <div *ngSwitchCase="'timer'">
+      <mat-icon class="block" aria-hidden="false" aria-label="Timer icon"
+        >timer</mat-icon
+      >
+    </div>
+    <div *ngSwitchDefault>DEF</div>
+  </div>
+  <div class="flex-grow truncate">
+    <span class="text-lg capitalize text-gray-700 font-medium">
+      {{ behavior.name }}
+    </span>
+    <div class="pt-2 flex items-center">
+      <span class="text-gray-600 mr-3">{{ behavior.type }}</span>
+      <span class="bg-green-300 text-green-600 rounded-md px-2">{{
+        behavior.abbreviation || "asd"
+      }}</span>
+    </div>
+  </div>
+  <div class="flex items-center">
+    <mat-icon
+      class="block text-gray-600"
+      aria-hidden="false"
+      aria-label="Timer icon"
+      >navigate_next</mat-icon
+    >
+  </div>
+</div>
